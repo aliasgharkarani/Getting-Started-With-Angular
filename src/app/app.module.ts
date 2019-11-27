@@ -16,11 +16,14 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavComponent
+    MyNavComponent,
+    NameEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     MatInputModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
