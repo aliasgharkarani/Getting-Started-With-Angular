@@ -1,8 +1,21 @@
-<label>
-    Name:
-    <input type="text" [formControl]="name">
-  </label>
-  <p>
+<form [formGroup]="AAK" (ngSubmit)="onClickM()">
+
+    <label>
+        Name:
+        <input type="text" formControlName="name">
+    </label>
+
+    <label>
+        class:
+        <input type="text" formControlName="class">
+    </label>
+
+    <label>
+        id:
+        <input type="text" formControlName="id">
+    </label>
+    <button>Submit</button>
+</form>
+<!-- <p>
     Value: {{ name.value }}
-  </p>
-  <button (click)="onClickM()">ABC</button>
+</p> -->

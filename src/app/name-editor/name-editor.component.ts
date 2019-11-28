@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,11 +7,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.scss']
 })
 export class NameEditorComponent implements OnInit {
-  name = new FormControl('');
+  // name = new FormControl('');
+  AAK = new FormGroup({
+    name: new FormControl(''),
+    class: new FormControl(''),
+    id: new FormControl('')
+  });
   constructor() { }
   ngOnInit() {
   }
   onClickM() {
-    console.log(this.name.value, 'wow' );
+    console.warn(this.AAK.value);
+    // console.log(this.name.value, 'wow' );
   }
 }
