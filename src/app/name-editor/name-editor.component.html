@@ -32,16 +32,17 @@
 </form>
 <button (click)="onClickM()">Array Status</button> -->
 
+<p>parent-comp works!</p>
 <div class="form-group">
-    <label for="exampleInputEmail" class="text-white">Email Address</label>
+    <label for="exampleInputEmail" class="text-white">Email Address from Parent</label>
     <input type="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail">
 </div>
 
-
 <div class="row">
     <div class="col-6">
-        <app-child-comp [parentEmail]="email"></app-child-comp>
+        <app-child-comp (emailOutPut)="onClickM($event)" [parentEmail]="email"></app-child-comp>
     </div>
+    <p>{{email}}</p>
     <!-- <div class="col-6">
         <app-child-comp [parentEmail]="email"></app-child-comp>
     </div> -->
