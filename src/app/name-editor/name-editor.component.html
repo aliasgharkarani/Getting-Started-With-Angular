@@ -15,7 +15,7 @@
     </label>
     <button>Submit</button>
 </form> -->
-<form [formGroup]="form">
+<!-- <form [formGroup]="form">
     <div>
 
         <h2>FORM ARRAY</h2>
@@ -30,4 +30,19 @@
 
     </div>
 </form>
-<button (click)="onClickM()">Array Status</button>
+<button (click)="onClickM()">Array Status</button> -->
+
+<div class="form-group">
+    <label for="exampleInputEmail" class="text-white">Email Address</label>
+    <input type="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail">
+</div>
+
+
+<div class="row">
+    <div class="col-6">
+        <app-child-comp [parentEmail]="email"></app-child-comp>
+    </div>
+    <!-- <div class="col-6">
+        <app-child-comp [parentEmail]="email"></app-child-comp>
+    </div> -->
+</div>

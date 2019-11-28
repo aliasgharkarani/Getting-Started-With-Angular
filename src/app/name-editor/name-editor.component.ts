@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
+// import { ChildComponent   } from '../child-comp/child-comp.component';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,13 +8,8 @@ import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
   styleUrls: ['./name-editor.component.scss']
 })
 export class NameEditorComponent implements OnInit {
-  // AAK = new FormGroup({
-  //   name: new FormControl(''),
-  //   class: new FormControl(''),
-  //   id: new FormControl('')
-  // });
   form: FormGroup;
-
+  email: any = '';
   constructor(private fb: FormBuilder) {
   }
   ngOnInit() {

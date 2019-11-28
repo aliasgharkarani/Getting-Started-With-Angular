@@ -18,12 +18,14 @@ import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ChildCompComponent } from './child-comp/child-comp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
-    NameEditorComponent
+    NameEditorComponent,
+    ChildCompComponent
   ],
   imports: [
     BrowserModule,
