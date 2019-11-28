@@ -27,8 +27,8 @@ export class NameEditorComponent implements OnInit {
   addCreds() {
     const creds = this.form.get('credentials') as FormArray;
     creds.push(this.fb.group({
-      username: '',
-      todo: '',
+      username: 'ali',
+      todo: 'work',
     }));
   }
 }
