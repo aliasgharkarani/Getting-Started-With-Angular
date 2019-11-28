@@ -1,5 +1,4 @@
-<form [formGroup]="AAK" (ngSubmit)="onClickM()">
-
+<!-- <form [formGroup]="AAK" (ngSubmit)="onClickM()">
     <label>
         Name:
         <input type="text" formControlName="name">
@@ -15,7 +14,20 @@
         <input type="text" formControlName="id">
     </label>
     <button>Submit</button>
+</form> -->
+<form [formGroup]="form">
+    <div>
+
+        <h2>FORM ARRAY</h2>
+        <button (click)="addCreds()">NEW</button>
+
+        <div formArrayName="credentials" *ngFor="let creds of form.get('credentials')?.controls; let i = index">
+            <ng-container [formGroupName]="i">
+                <input placeholder="Username" formControlName="username">
+                <input placeholder="todo" formControlName="todo">
+            </ng-container>
+        </div>
+
+    </div>
 </form>
-<!-- <p>
-    Value: {{ name.value }}
-</p> -->
+<button (click)="onClickM()">Array Status</button>

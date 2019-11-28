@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,17 +7,28 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.scss']
 })
 export class NameEditorComponent implements OnInit {
-  // name = new FormControl('');
-  AAK = new FormGroup({
-    name: new FormControl(''),
-    class: new FormControl(''),
-    id: new FormControl('')
-  });
-  constructor() { }
+  // AAK = new FormGroup({
+  //   name: new FormControl(''),
+  //   class: new FormControl(''),
+  //   id: new FormControl('')
+  // });
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+  }
   ngOnInit() {
+    this.form = this.fb.group({
+      credentials: this.fb.array([]),
+    });
   }
   onClickM() {
-    console.warn(this.AAK.value);
-    // console.log(this.name.value, 'wow' );
+    console.warn(this.form.value.credentials, 'wow');
+  }
+  addCreds() {
+    const creds = this.form.get('credentials') as FormArray;
+    creds.push(this.fb.group({
+      username: '',
+      todo: '',
+    }));
   }
 }
