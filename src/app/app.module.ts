@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,15 +16,12 @@ import {MatInputModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NameEditorComponent } from './name-editor/name-editor.component';
-import { ChildCompComponent } from './child-comp/child-comp.component';
+import { AuthFormComponent } from './auth-form/auth-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavComponent,
-    NameEditorComponent,
-    ChildCompComponent
+    AuthFormComponent
   ],
   imports: [
     BrowserModule,
