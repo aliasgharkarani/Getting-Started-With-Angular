@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from './auth-form/auth-form.interface';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,4 @@ import { User } from './auth-form/auth-form.interface';
 })
 export class AppComponent {
   title = 'todoApp';
-
-  createUser(user: User) {
-    console.log('Create user', user);
-  }
-  loginUser(user: User) {
-    console.log('Login user', user);
-  }
 }
