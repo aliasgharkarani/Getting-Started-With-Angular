@@ -1,6 +1,6 @@
 <div>
     <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
-        <ng-content></ng-content>
+        <ng-content select="[header]"></ng-content>
         <label>
             Email address
             <input type="email" name="email" ngModel>
@@ -12,5 +12,6 @@
         <button type="submit">
             Submit
         </button>
+        <ng-content select="[body]"></ng-content>
     </form>
 </div>

@@ -1,8 +1,11 @@
+<h2 style="margin-left: 10%;">Content Projection</h2>
 <div style="display: flex;">
     <app-auth-form (submitted)="createUser($event)">
-        <h3>Create User</h3>
+        <h2 header style="text-align: center;">Create User</h2>
+        <h2 body style="text-align: center;">STEP1</h2>
     </app-auth-form>
     <app-auth-form (submitted)="loginUser($event)">
-        <h3>Login User</h3>
+        <h2 header style="text-align: center;">Login User</h2>
+        <h2 body style="text-align: center;">STEP2</h2>
     </app-auth-form>
 </div>
