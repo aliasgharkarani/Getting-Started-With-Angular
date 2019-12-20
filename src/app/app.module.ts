@@ -17,11 +17,13 @@ import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthFormComponent } from './auth-form/auth-form.component';
+import { AuthRememberComponent } from './auth-form/auth-remember.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthFormComponent
+    AuthFormComponent,
+    AuthRememberComponent
   ],
   imports: [
     BrowserModule,

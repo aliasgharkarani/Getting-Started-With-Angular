@@ -8,11 +8,16 @@ import { User } from './auth-form/auth-form.interface';
 })
 export class AppComponent {
   title = 'todoApp';
+  rememberMe = false;
 
   createUser(user: User) {
-    console.log('Create user', user);
+    console.log('Create user', user, this.rememberMe);
   }
   loginUser(user: User) {
-    console.log('Login user', user);
+    console.log('Login user', user, this.rememberMe);
+  }
+
+  rememberUser(remember: boolean) {
+    this.rememberMe = remember;
   }
 }
