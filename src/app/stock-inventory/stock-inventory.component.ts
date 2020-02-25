@@ -8,48 +8,37 @@ import { Product } from './models/product.interface';
 })
 export class StockInventoryComponent implements OnInit {
 
-  products: Product[] = [
-    { id: 1, price: 2000, name: 'Macbook Air' },
-    { id: 2, price: 5000, name: 'Macbook Pro' },
-  ];
-
-  form = this.fb.group({
-    store: this.fb.group({
-      branch: '',
-      code: ''
-    }),
-    selector: this.createStock({ product_id: 5, quantity: 50 }),
-    stock: this.fb.array([
-      this.createStock({ product_id: 1, quantity: 10 }),
-      this.createStock({ product_id: 2, quantity: 20 })
-    ])
-  });
+  orderForm: FormGroup;
   constructor(
     private fb: FormBuilder
   ) { }
 
-  ngOnInit(): void {
+  get items(): FormArray {
+    return this.orderForm.get('items') as FormArray;
   }
-
-  createStock(stock) {
-    return this.fb.group({
-      product_id: (parseInt(stock.product_id, 10) || ''),
-      quantity: (stock.quantity || 10)
+  ngOnInit() {
+    this.orderForm = this.fb.group({
+      customerName: 'abc',
+      items: this.fb.array([
+        this.createItem({ name: 'Macbook Pro', description: 'i5', price: '25000' }),
+        this.createItem({ name: 'Macbook Air', description: 'i7', price: '35000' }),
+        this.createItem({ name: '', description: '', price: '' })
+      ])
     });
   }
 
-  addStock(stock) {
-    const control = this.form.get('stock') as FormArray;
-    control.push(this.createStock(stock));
+  createItem({ name, description, price }): FormGroup {
+    return this.fb.group({
+      name,
+      description,
+      price
+    });
   }
 
-  removeStock({ group, index }: { group: FormGroup, index: number }) {
-    const control = this.form.get('stock') as FormArray;
-    control.removeAt(index);
-    console.log(group, index);
+  addItem(): void {
+    this.items.push(this.createItem({ name: '', description: '', price: '' }));
   }
-
   onSubmit() {
-    console.log(this.form.value, 'Submit');
+    console.log(this.orderForm.value.items);
   }
 }
